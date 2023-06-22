@@ -1,0 +1,23 @@
+@import url('../globals.css');
+.header .franja{
+    background-image: url("data:image/svg+xml,%3Csvg width='360' height='140' viewBox='0 0 360 140' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H360V116.457C231.84 148.061 123.36 147.634 0 116.457V0Z' fill='%23BBE550' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 140px;
+}
+.header .logo{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 55px;
+}
+.titulos_generales{
+    font-size: var(--font-titulo);
+    font-weight: 700;
+}
+.body{
+    margin-top:80px;
+    padding:0 8px;
+    font-weight: 400;
+}

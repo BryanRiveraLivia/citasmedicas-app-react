@@ -1,0 +1,56 @@
+:root {
+    --font-general:14px;
+    --font-titulo:20px;
+    --font-pequeno:12px;
+    --bg_verde:#BBE550;
+    --bg_verde2: #5ABC91;
+    --bg_verde2_disabled:#5ABC9180;
+    --bg_verde3:#BFF535;
+    --bg_verde3_disabled:#BBE55080;
+    --bg_verde3:#1E7200;
+    --bg_error:#EF333F;
+    --bg_naranja:#F3933A;
+    --bg_naranja_disabled:#F3933A80;
+    --bg_gris:#A5A5A5;
+    --bg_gris2:#607D8B;
+    --txt-negro:#2D423C;
+  }
+
+  body{
+    font-size: var(--font-general);
+    line-height: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+
+  .form-box label{
+    color:var(--txt-negro)
+  }
+
+  .form-box input{
+    border: 1px solid #607D8B33;
+    width: 100%;
+    padding: 13.5px 15px !important;
+  }
+  .form-box input::placeholder{
+    color:#607D8B80;
+
+  }
+  .form-box .input-grupo input{
+    padding-right: 52px !important;
+  }
+  .form-box .input-grupo svg{
+    position: absolute;
+    right: 36px;
+    margin-top: 11px;
+    width: 26px;
+    height: 26px;
+    color:var(--bg_gris2);
+  }
+  button.login{
+    width: 100%;
+    height: 46px;
+  }
+button.login:disabled{
+    background-color: var(--bg_verde2_disabled);
+  }
