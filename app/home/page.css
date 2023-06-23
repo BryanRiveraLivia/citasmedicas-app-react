@@ -1,0 +1,214 @@
+@import url('../globals.css');
+.app{
+    min-height: 100vh;
+}
+.head-usuario{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: var(--bg_verde2);
+}
+.body-usuario{
+    padding-bottom: 80px !important;
+}
+.info-nombre{
+    font-size: 17px;
+    line-height: 23.44px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+}
+.info-bienvenido{
+    font-size: 12px;
+}
+.info-bienvenido p{
+    color: var(--bg_verde);
+}
+.app{
+    background-color: #fafafb;
+}
+.taskbar{
+    position: fixed;
+    left:0;
+    width:100%;
+    background-color: #fafafb;
+    bottom:0;
+}
+.taskbar .botones{
+    background-color: white;
+}
+.taskbar .botones .icono {
+    display: block;
+    margin-bottom: 5px !important;
+    margin:auto;
+}
+.taskbar .botones .icono svg{
+    width:24px;
+    height: 24px;
+    /*color:var(--ico-taskbar)*/
+}
+.taskbar .botones a{
+    text-decoration: none;
+    text-align: center;
+    color:var(--ico-taskbar);
+    transition: .3s;
+}
+.taskbar .botones a.activo{
+    color:var(--ico-taskbar-activo)
+}
+.taskbar .botones a:hover{
+    color:var(--ico-taskbar-activo)
+}
+.taskbar .botones  .txtlabel{
+    font-size:11px;
+}
+.tipo-de-citas{
+    padding: 0;
+    margin:0;
+    list-style: none;
+    gap:10px;
+}
+.tipo-de-citas li{
+    height: 45px;
+    cursor: pointer;
+    background-color: #dddddd4a;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#8696BB;
+    transition: .3s;
+    padding:20px;
+    font-weight: 500;
+}
+.tipo-de-citas li.activo{
+    background-color: #ecf7f2;
+    color:var(--ico-taskbar-activo);
+}
+.tipo-de-citas li:hover{
+    background-color: #ecf7f2;
+    color:var(--ico-taskbar-activo);
+}
+.tipo-de-citas::-webkit-scrollbar-track
+{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;*/
+}
+
+.tipo-de-citas::-webkit-scrollbar
+{
+	height: 1px;
+    width: 1px;
+	background-color: transparent;
+}
+
+.tipo-de-citas::-webkit-scrollbar-thumb
+{
+	/*background-color: #000000;
+	border: 2px solid #555555;*/
+}
+
+.btn-refresh{
+    color: var(--bg_verde2);
+}
+.btn-refresh + svg{
+    width: 24px;
+    color: var(--bg_verde2);
+    height: 24px;
+}
+.moduloCita .fecha{
+    color:var(--txt-negro);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+}
+.eleccionMedico{
+    box-shadow: 2px 12px 20px 0px #5A75A70A;
+background-color: white;
+border-radius: 15px;
+padding:16px;
+}
+.eleccionMedico img{
+    width:48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: white;
+}
+.eleccionMedico .nombre{
+    color:#2D423C;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.eleccionMedico .oficio{
+    color:#8696BB;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.eleccionMedico .especialidad{
+    color:#66728C;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.eleccionMedico hr{
+    border-top: 1px solid #4b4b4b1c;
+    opacity: 9;
+}
+.eleccionMedico .info-horario{
+    color:var(--bg_gris2)
+}
+.eleccionMedico .info-horario svg{
+    width:20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+}
+.eleccionMedico .info-horario span{
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+}
+.eleccionMedico .info-botones{
+    gap:16px;
+}
+
+.eleccionMedico .info-botones button{
+    height: 39px;
+    text-align: center;
+    border-radius: 30px;
+    border:none;
+}
+
+.eleccionMedico .info-botones button:first-child{
+    background-color: #FFE7A1;
+    color:#FD9B08;
+font-size: 14px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+
+.eleccionMedico .info-botones button:last-child{
+    background-color: #f0fbf6;
+    color:#61CF9F;
+font-size: 14px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0em;
+text-align: center;
+}
