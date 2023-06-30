@@ -1,0 +1,612 @@
+@import url('../../globals.css');
+.app{
+    min-height: 100vh;
+}
+.head-usuario-detalle{
+}
+.head-usuario-detalle .regresar svg{
+    color:#5ABC91;
+    min-width: 20px;
+    height: 18px;
+}
+.head-usuario-detalle .detalleUsuario{
+    font-family: Rubik;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color:#5ABC91;
+}
+.head-usuario-detalle .eliminar button{
+    background: #F3933A;
+    border-radius: 21px;
+    border:none;
+    color:white;
+    height: 32px;
+    padding:0 15px;
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.head-usuario-detalle .eliminar svg{
+    color:white;
+    width: 16px;
+    height: 16px;
+}
+.body-usuario{
+    padding-bottom: 112px !important;
+}
+.info-nombre{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900 !important;
+    line-height: 23px;
+    letter-spacing: 0em;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+}
+.info-bienvenido{
+    font-size: 12px;
+}
+.info-bienvenido p{
+    color: var(--bg_verde);
+}
+.app{
+    background-color: #fafafb;
+}
+.taskbar{
+    position: fixed;
+    left:0;
+    width:100%;
+    background-color: #fafafb;
+    bottom:0;
+    z-index: 99;
+}
+.taskbar_capa{
+    position: fixed;
+    left:0;
+    width:100%;
+    bottom:0;
+    z-index: 1;
+}
+.taskbar_capa .deco{
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 100%;
+    position: relative;
+    top: -40px;
+    right: 10px;
+}
+.taskbar .icono-especial{
+    
+}
+.taskbar .icono-especial::before {
+   /* content: " ";
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -26px;
+    background: white;
+    border-radius: 100%;*/
+}
+.taskbar .icono-especial .icono{
+    margin-bottom: 0px !important;
+    display: unset !important;
+    margin: unset !important;
+    margin: unset !important;
+    box-shadow: 0px 4px 12px 0px #0EBE7F80;
+    background-color: #61CF9F;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -39px;
+    left: 10px;
+}
+.taskbar .icono-especial .icono:hover{
+    box-shadow: none;
+}
+.taskbar .icono-especial svg{
+    color:white !important;
+}
+.taskbar .botones{
+    background-color: white;
+}
+.taskbar .botones .icono {
+    display: block;
+    margin-bottom: 5px !important;
+    margin:auto;
+}
+.taskbar .botones .icono svg{
+    width:24px;
+    height: 24px;
+    /*color:var(--ico-taskbar)*/
+}
+.taskbar .botones .icono2 svg{
+    width:38px;
+    height: 24px;
+    /*color:var(--ico-taskbar)*/
+}
+.taskbar .botones a{
+    text-decoration: none;
+    text-align: center;
+    color:var(--ico-taskbar);
+    transition: .3s;
+}
+.taskbar .botones a.activo{
+    color:var(--ico-taskbar-activo)
+}
+.taskbar .botones a:hover{
+    color:var(--ico-taskbar-activo)
+}
+.taskbar .botones a:hover svg path {
+    fill:var(--ico-taskbar-activo);
+}
+.taskbar .botones a:hover .icono2 svg path {
+    fill:transparent;
+    stroke:var(--ico-taskbar-activo);
+}
+.taskbar .botones a.icono-especial:hover svg path{
+   fill: white !important;
+}
+.taskbar .botones  .txtlabel{
+    font-size:11px;
+}
+.tipo-de-citas{
+    padding: 0;
+    margin:0;
+    list-style: none;
+    gap:10px;
+}
+.tipo-de-citas li{
+    font-family: 'Poppins';
+    /*height: 45px;*/
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#8696BB;
+    transition: .3s;
+    /*padding:20px;*/
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.tipo-de-citas li.activo{
+    background-color: #ecf7f2;
+    color:var(--ico-taskbar-activo);
+}
+.tipo-de-citas li:hover{
+    background-color: #ecf7f2;
+    color:var(--ico-taskbar-activo);
+}
+.tipo-de-citas li a{
+    text-decoration: none;
+    color: unset;
+    height: 45px;
+    padding: 15px;
+    display: block;
+}
+.tipo-de-citas::-webkit-scrollbar-track
+{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;*/
+}
+
+.tipo-de-citas::-webkit-scrollbar
+{
+	height: 1px;
+    width: 1px;
+	background-color: transparent;
+}
+
+.tipo-de-citas::-webkit-scrollbar-thumb
+{
+	/*background-color: #000000;
+	border: 2px solid #555555;*/
+}
+
+.btn-refresh{
+    color: var(--bg_verde2);
+}
+.btn-refresh + svg{
+    width: 24px;
+    color: var(--bg_verde2);
+    height: 24px;
+}
+.moduloCita .fecha{
+    color:var(--txt-negro);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+}
+.eleccionMedico{
+    box-shadow: 2px 12px 20px 0px #5A75A70A;
+background-color: white;
+border-radius: 15px;
+padding:16px;
+}
+.eleccionMedico img{
+    width:48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: white;
+}
+.eleccionMedico .nombre{
+    color:#2D423C;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.eleccionMedico .oficio{
+    color:#8696BB;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.eleccionMedico .especialidad{
+    color:#66728C;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.eleccionMedico hr{
+    border-top: 1px solid #4b4b4b1c;
+    opacity: 9;
+}
+.eleccionMedico .info-horario{
+    color:var(--bg_gris2)
+}
+.eleccionMedico .info-horario svg{
+    width:20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+}
+.eleccionMedico .info-horario span{
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+}
+.eleccionMedico .info-botones{
+    gap:16px;
+}
+
+.eleccionMedico .info-botones button{
+    height: 39px;
+    text-align: center;
+    border-radius: 30px;
+    border:none;
+}
+
+.eleccionMedico .info-botones button:first-child{
+    background-color: #FFE7A1;
+    color:#FD9B08;
+font-size: 14px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+
+.eleccionMedico .info-botones button:last-child{
+    background-color: #f0fbf6;
+    color:#61CF9F;
+font-size: 14px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0em;
+text-align: center;
+}
+
+
+
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .radio-container.activo{
+    border: 1px solid 
+    #61CF9F;
+    color:#61CF9F;
+  }
+  
+  .radio-container input[type="radio"] {
+    display: none;
+  }
+  
+  .checkmark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C0C0C0;
+    border-radius: 100%;
+  }
+  .radio-container{
+    border: 1px solid #C0C0C033;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .radio-container .checkmark{
+    margin-right: 8px;
+  }
+  .radio-container{
+    color:#C0C0C0;
+    cursor: pointer;
+  }
+  .radio-container input[type="radio"]:checked + .checkmark {
+    border: 2px solid #61CF9F;
+    background-color: white;
+  }
+  
+  .radio-container input[type="radio"]:checked + .checkmark::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: #61CF9F;
+    border-radius: 100%;
+  }
+
+
+
+  .menu-registro-usuario a{
+
+  }
+  .inputTelefono .PhoneInputCountry{
+    content:"";
+height: 54px;
+border-radius: 10px;
+border: 1px;
+background-color: white;
+border: 1px solid #607D8B33;
+border-radius: 10px !important;
+padding: 13.5px 15px 13.5px 15px;
+margin-right: 0 !important;
+  }
+  .inputTelefono input{
+    height: 54px;
+    width: 67px;
+    text-align: center;
+    border: 1px solid #607D8B33;
+    border-radius: 10px !important;
+    font-weight: 900;
+    color:#2D423C;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: 0;
+  }
+  .separadorInput{
+    width: 0;
+    border-right: 1px solid #607D8B33;
+    border-left: 0;
+    height: 30px;
+    position: relative;
+    top: 12px;
+  }
+  #inputTelefono2{
+    height: 54px;
+    width: 67px;
+    width:100%;
+    text-align: left;
+    border: 1px solid #607D8B33;
+    border-radius: 10px !important;
+    font-weight: 900;
+    color:#2D423C;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left: 0;
+  }
+  #inputTelefono2::placeholder{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+  }
+  .PhoneInputCountryIcon--border{
+    box-shadow: none !important;
+  }
+  .PhoneInputCountrySelectArrow{
+    width: 8px !important;
+    height: 8px !important;
+    position: relative;
+    top: -2px;
+    left: 2px;
+    color:#61CF9F;
+    opacity: .7 !important;
+  }
+  .zipcode-input {
+    /* Aquí puedes agregar los estilos deseados para el campo de código postal */
+    background-color: lightgray;
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  .cardDetalleUsuario{
+    background-color: white;
+    box-shadow: 2px 12px 20px 0px #5A75A70A;
+
+    padding:20px 16px 20px 16px;
+    border-radius: 8px;
+  }
+  .cardDetalleUsuario .col1 img{
+    min-width: 48px;
+    height: 48px;
+  }
+  .cardDetalleUsuario .col1 .infoNombre span:first-child{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+color:#2D423C;
+  }
+  .cardDetalleUsuario .col1 .infoNombre span:last-child{
+    font-family: Poppins;
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+
+color:#8696BB;
+  }
+  .cardDetalleUsuario > div {
+    gap:12px;
+  }
+  .cardDetalleUsuario hr{
+    border-top: 1px solid #F5F5F5;
+    opacity:9;
+  }
+  .cardDetalleUsuario .col2 > div:first-child{
+    color: #8696BB;
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+  }
+  .cardDetalleUsuario .col2 > div:first-child svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+  .cardDetalleUsuario .col2 > div:last-child{
+    color: #8696BB;
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+  }
+  .cardDetalleUsuario .col2 > div:last-child svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+  .modalokRegistro img.ok{
+  max-width: 94.17px;
+  height: 83px;
+}
+ .modalokRegistro img.eliminar{
+  max-width: 102px;
+  height: 94px;
+}
+.modalokRegistro .modal-content{
+  border:none;
+  box-shadow: 0px 4px 4px 0px #00197040;
+
+ }
+ .modalokRegistro .modal-body{
+  min-height: 269px;
+ }
+  .modalokRegistro .txtinfo.ok{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#383636;
+max-width: 137px;
+width: 100%;
+  }
+   .modalokRegistro .txtinfo.eliminar{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#383636;
+max-width: 185px;
+width: 100%;
+  }
+    .modalokRegistro button{
+        max-width: 217px;
+    height: 46px;
+    padding: 13px 10px 14px 10px;
+    border-radius: 30px;
+    background-color: #5ABC91;
+    border: none;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 100%;
+    }
+    .modalokRegistro button.no{
+background-color: #A5A5A5;
+    }
+
+
+    .calendario button{
+      border:none;
+      border: 1px solid #BBE550;
+      box-shadow: 1px 6px 11px 0px #00000008;
+      background-color: 
+      #BBE550;
+      border-radius: 12px;
+      height: 60px;
+      border-bottom: 8px solid #a3d22a;
+    }
+
+    .calendario button .col1{
+
+    }
+
+    .calendario button .col2{
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 23px;
+      letter-spacing: 0em;
+      
+    }
+
+    .calendario button .col3 img{
+      width: 8px;
+      height: 16px;
+    }

@@ -1,4 +1,4 @@
-import { Roboto, Poppins} from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const roboto = Roboto({
@@ -10,7 +10,6 @@ const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
 });
-
 
 export const metadata = {
   title: "Create Next App",

@@ -8,11 +8,14 @@
     background-color: var(--bg_verde2);
 }
 .body-usuario{
-    padding-bottom: 80px !important;
+    padding-bottom: 112px !important;
 }
 .info-nombre{
-    font-size: 17px;
-    line-height: 23.44px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900 !important;
+    line-height: 23px;
+    letter-spacing: 0em;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -63,6 +66,15 @@
 .taskbar .botones  .txtlabel{
     font-size:11px;
 }
+.msjNoHayInfo{
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 300;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
+}
 .tipo-de-citas{
     padding: 0;
     margin:0;
@@ -70,17 +82,19 @@
     gap:10px;
 }
 .tipo-de-citas li{
-    height: 45px;
+    font-family: 'Poppins';
+   /* height: 45px;*/
     cursor: pointer;
-    background-color: #dddddd4a;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     color:#8696BB;
     transition: .3s;
-    padding:20px;
+    /*padding:20px;*/
     font-weight: 500;
+    white-space: nowrap;
+    font-size: 12px;
 }
 .tipo-de-citas li.activo{
     background-color: #ecf7f2;
@@ -89,6 +103,13 @@
 .tipo-de-citas li:hover{
     background-color: #ecf7f2;
     color:var(--ico-taskbar-activo);
+}
+.tipo-de-citas li a{
+    text-decoration: none;
+    color: unset;
+    height: 45px;
+    padding: 15px;
+    display: block;
 }
 .tipo-de-citas::-webkit-scrollbar-track
 {

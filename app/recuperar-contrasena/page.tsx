@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import "./page.css";
 import Image from "next/image";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import {BsCheck2Circle} from 'react-icons/bs'
+import { BsCheck2Circle } from "react-icons/bs";
 import Link from "next/link";
 
 const page = () => {
@@ -29,7 +29,7 @@ const page = () => {
                 </label>
                 <div className="input-grupo mb-3">
                   <input
-                    className="rounded-4 text-uppercase"
+                    className=""
                     type="text"
                     name=""
                     placeholder="Ingresa tu doc. de identidad"
@@ -54,14 +54,19 @@ const page = () => {
             </div>
             <div className="col-12">
               <span className="d-block text-center font-12 d-flex align-items-center justify-content-center py-3">
-                <span>¿Deseas iniciar sesión?</span> <Link href={'/iniciar-sesion'}><span className="font-verde2 text-decoration-underline ms-1">Regresa aquí</span></Link>
+                <span>¿Deseas iniciar sesión?</span>{" "}
+                <Link href={"/iniciar-sesion"}>
+                  <span className="font-verde2 text-decoration-underline ms-1">
+                    Regresa aquí
+                  </span>
+                </Link>
               </span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
