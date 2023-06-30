@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Calendar from 'react-calendar';
 import { useRouter } from "next/navigation";
 import { Poppins, Roboto } from "next/font/google";
 import "./page.css";
@@ -17,6 +18,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Modal from "react-bootstrap/Modal";
 import { HiOutlineCalendarDays, HiOutlineClock } from "react-icons/hi2";
+import 'react-calendar/dist/Calendar.css';
 
 const svgUsuario = `<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.77138 8.1525C9.69102 8.145 9.59459 8.145 9.5062 8.1525C7.5937 8.0925 6.07495 6.63 6.07495 4.83C6.07495 2.9925 7.66602 1.5 9.64281 1.5C11.6116 1.5 13.2107 2.9925 13.2107 4.83C13.2026 6.63 11.6839 8.0925 9.77138 8.1525Z" stroke="#5ABC91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -53,6 +55,8 @@ const Page = () => {
   const [fullscreen, setFullscreen] = useState<boolean>(true);
   const [show, setShow] = useState<boolean>(false);
   const [showeliminar, setShoweliminar] = useState<boolean>(false);
+  const [valueCalendar, onChangeCalendar] = useState(new Date());
+  const [showCalendar, setShowCalendar] = useState<boolean>(false)
 
   const handleOptionChange = (event: any) => {
     setSelectedOption(event.target.value);
@@ -61,6 +65,10 @@ const Page = () => {
   const modificarRegistro = () => {
     setShow(!show);
   };
+
+  const seleccionDeFechaCalendario = (e:Date) => {
+    console.log(e)
+  }
 
   return (
     <div className={`app`}>
@@ -120,7 +128,7 @@ const Page = () => {
               </div>
             </div>
             <div className="col-12 calendario my-3">
-              <button className="d-flex justify-content-center align-content-center w-100 align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-3 gap-3 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-2">
+              <button onClick={()=>setShowCalendar(!showCalendar)} className="d-flex justify-content-center align-content-center w-100 align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-3 gap-3 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-2">
                 <div className="col1">
                   <img src={`/img/noto_tear-off-calendar.png`} alt="" />
                 </div>
@@ -130,7 +138,19 @@ const Page = () => {
                 </div>
               </button>
             </div>
-            <div className="col-12 ">
+            {
+              (showCalendar) && 
+              <div className="ElegirFechaCalendario">
+                <div className="container-fluid">
+                  <div className="row">
+                    <div className="col-12">
+                      <Calendar  onChange={(e) => seleccionDeFechaCalendario(e)} value={valueCalendar} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+            <div className={`col-12 ${(showCalendar) ? 'd-none' : null}`}>
               <div className="boxCard">
                 <div className="container-fluid px-0">
                   <div className="row">
@@ -203,6 +223,23 @@ const Page = () => {
                                   placeholder="##"
                                   id=""
                                 />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="form-box mb-4">
+                              <label
+                                htmlFor=""
+                                className="d-flex flex-row align-items-center px-2 mb-3"
+                              >
+                                {parse(svgEdad)}{" "}
+                                <span className="ms-1">Especialidad</span>
+                              </label>
+                              <div className="input-grupo mb-3">
+                                <select>
+                                  <option value="">Lorem.</option>
+                                  <option value="">Voluptatum?</option>
+                                </select>
                               </div>
                             </div>
                           </div>
