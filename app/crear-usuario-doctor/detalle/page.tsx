@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Calendar from 'react-calendar';
+import Calendar from "react-calendar";
+import DateCallback from "react-calendar";
 import { useRouter } from "next/navigation";
 import { Poppins, Roboto } from "next/font/google";
 import "./page.css";
@@ -18,7 +19,9 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Modal from "react-bootstrap/Modal";
 import { HiOutlineCalendarDays, HiOutlineClock } from "react-icons/hi2";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
+import { RiPencilFill } from "react-icons/ri";
+import SeleccionarHorarioCard from "@/components/SeleccionarHorarioCard/SeleccionarHorarioCard";
 
 const svgUsuario = `<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.77138 8.1525C9.69102 8.145 9.59459 8.145 9.5062 8.1525C7.5937 8.0925 6.07495 6.63 6.07495 4.83C6.07495 2.9925 7.66602 1.5 9.64281 1.5C11.6116 1.5 13.2107 2.9925 13.2107 4.83C13.2026 6.63 11.6839 8.0925 9.77138 8.1525Z" stroke="#5ABC91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,8 +58,8 @@ const Page = () => {
   const [fullscreen, setFullscreen] = useState<boolean>(true);
   const [show, setShow] = useState<boolean>(false);
   const [showeliminar, setShoweliminar] = useState<boolean>(false);
-  const [valueCalendar, onChangeCalendar] = useState(new Date());
-  const [showCalendar, setShowCalendar] = useState<boolean>(false)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [showCalendar, setShowCalendar] = useState<boolean>(false);
 
   const handleOptionChange = (event: any) => {
     setSelectedOption(event.target.value);
@@ -66,9 +69,34 @@ const Page = () => {
     setShow(!show);
   };
 
-  const seleccionDeFechaCalendario = (e:Date) => {
-    console.log(e)
-  }
+  const handleDateChange = (date: Date | Date[] | null) => {
+    if (date instanceof Date) {
+      setSelectedDate(date);
+      console.log(date); // Realiza las acciones deseadas con la fecha seleccionada
+    }
+  };
+
+  const elegirFecha = (e: Date) => {
+    setSelectedDate(e);
+    console.log(e);
+  };
+
+  const eliminarComillasDobles = (str: string) => {
+    return str.replace(/"/g, "");
+  };
+
+  const convertirFecha = (fecha: string) => {
+    const fechaObjeto = new Date(eliminarComillasDobles(fecha));
+    const dia = fechaObjeto.getDate();
+    const mes = fechaObjeto.getMonth() + 1;
+    const anio = fechaObjeto.getFullYear();
+
+    // Formatear los componentes de la fecha con ceros a la izquierda si es necesario
+    const diaFormateado = dia < 10 ? `0${dia}` : dia;
+    const mesFormateado = mes < 10 ? `0${mes}` : mes;
+    // Devolver la fecha formateada
+    return `${diaFormateado}/${mesFormateado}/${anio}`;
+  };
 
   return (
     <div className={`app`}>
@@ -109,7 +137,7 @@ const Page = () => {
                   </div>
                   <div className="flex-fill  flex-column d-flex infoNombre">
                     <span>José Fabricio Retes Ruiz</span>
-                    <span>42 años - Paciente Recurrente</span>
+                    <span>44 años - Oftalmólogo</span>
                   </div>
                 </div>
                 <div>
@@ -128,7 +156,10 @@ const Page = () => {
               </div>
             </div>
             <div className="col-12 calendario my-3">
-              <button onClick={()=>setShowCalendar(!showCalendar)} className="d-flex justify-content-center align-content-center w-100 align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-3 gap-3 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-2">
+              <button
+                onClick={() => setShowCalendar(!showCalendar)}
+                className="d-flex justify-content-center align-content-center w-100 align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-3 gap-3 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-2"
+              >
                 <div className="col1">
                   <img src={`/img/noto_tear-off-calendar.png`} alt="" />
                 </div>
@@ -138,19 +169,93 @@ const Page = () => {
                 </div>
               </button>
             </div>
-            {
-              (showCalendar) && 
+            {showCalendar && (
               <div className="ElegirFechaCalendario">
                 <div className="container-fluid">
                   <div className="row">
+                    <div className="col-12 px-1 mb-4">
+                      <Calendar
+                        locale="es-ES"
+                        onChange={(e: any) => elegirFecha(e)}
+                        value={selectedDate}
+                      />
+                    </div>
+                    <div className="col-12 titulo mt-2">
+                      <div className="tituloElijeFecha">
+                        <span>Horarios disponibles para hoy</span>
+                        <span>
+                          {convertirFecha(JSON.stringify(selectedDate))}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="col-12 d-flex my-3 contenedor-custom-checkbox-horario justify-content-between">
+                      {Array.from(new Array(50)).map((k) => (
+                        <>
+                          <label className={`custom-checkbox-horario disabled`}>
+                            <input type="checkbox" />
+                            <span className="checkmark"></span>
+                            <span className="label">12:30 AM</span>
+                          </label>
+                        </>
+                      ))}
+                    </div>
+                    <div className="col-12 mt-3">
+                      <div className="tituloElijeFecha mb-3">
+                        <span>Horarios acordados</span>
+                        <span></span>
+                      </div>
+                    </div>
                     <div className="col-12">
-                      <Calendar  onChange={(e) => seleccionDeFechaCalendario(e)} value={valueCalendar} />
+                      <ul className="lista-horario-dia">
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Lunes:
+                            <span>8AM - 1PM</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Martes:
+                            <span>10AM - 3PM</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Miércoles:
+                            <span>No labora</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Jueves:
+                            <span>8AM - 12PM</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Viernes:
+                            <span>8AM - 2PM</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                        <li className="d-flex align-items-center">
+                          <span>
+                            Sábados:
+                            <span>No labora</span>
+                          </span>
+                          <RiPencilFill></RiPencilFill>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            }
-            <div className={`col-12 ${(showCalendar) ? 'd-none' : null}`}>
+            )}
+            <div className={`col-12 ${showCalendar ? "d-none" : null}`}>
               <div className="boxCard">
                 <div className="container-fluid px-0">
                   <div className="row">
@@ -191,9 +296,7 @@ const Page = () => {
                                 className="d-flex flex-row align-items-center px-2 mb-3"
                               >
                                 {parse(svgDoc)}{" "}
-                                <span className="ms-1">
-                                  Documento de identidad
-                                </span>
+                                <span className="ms-1">Usuario</span>
                               </label>
                               <div className="input-grupo mb-3">
                                 <input
@@ -258,9 +361,9 @@ const Page = () => {
                               <div className="input-grupo mb-3 d-flex">
                                 <PhoneInput
                                   style={{ gap: "8px" }}
-                                  className="inputTelefono "
+                                  className="inputTelefono"
                                   international
-                                  defaultCountry="PE"
+                                  defaultCountry={"PE"}
                                   value={value}
                                   onChange={setValue}
                                 />

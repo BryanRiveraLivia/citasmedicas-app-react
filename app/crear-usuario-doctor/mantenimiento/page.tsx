@@ -5,7 +5,7 @@ import { Poppins, Roboto } from "next/font/google";
 import "./page.css";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import Link from "next/link";
-import { BsHouse } from "react-icons/bs";
+import { BsArrowLeft, BsHouse } from "react-icons/bs";
 import { ImPaste } from "react-icons/im";
 import { AiOutlineFileDone, AiOutlineMedicineBox } from "react-icons/ai";
 import { IoCalendarOutline, IoCloseOutline } from "react-icons/io5";
@@ -13,7 +13,7 @@ import { SlRefresh } from "react-icons/sl";
 import { HiOutlineCalendarDays, HiOutlineClock } from "react-icons/hi2";
 import parse from "html-react-parser";
 import "react-phone-number-input/style.css";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiTrash } from "react-icons/fi";
 import { CiFilter } from "react-icons/ci";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import Modal from "react-bootstrap/Modal";
@@ -93,51 +93,39 @@ const Page = () => {
   const [value, setValue] = useState<any>("");
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
+  const [showeliminar, setShoweliminar] = useState<boolean>(false);
 
   return (
     <div className={`app`}>
-      <div className="head-usuario p-3">
+      <div className="head-usuario-detalle py-3">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 d-flex align-items-center">
-              <div>
-                <img src={`/img/img-perfil.png`} alt="" />
+            <div className="col-12 d-flex align-items-center justify-content-between">
+              <div
+                className="regresar cursor-pointer"
+                onClick={() => router.push("mantenimiento")}
+              >
+                <BsArrowLeft></BsArrowLeft>
               </div>
-              <div className="flex-fill px-2">
-                <span className="info-nombre  text-white fw-bold">
-                  Hola Juan Gutierrez,
-                </span>
-                <span className="info-bienvenido d-block text-white">
-                  Bienvenido a <p className="d-inline">Financoop</p>
-                </span>
-              </div>
-              <div>
-                <BiDotsVerticalRounded
-                  className="text-white"
-                  style={{ fontSize: "25px" }}
-                ></BiDotsVerticalRounded>
+              <div className="detalleUsuario flex-fill px-3">Doctores</div>
+              <div className="eliminar">
+                <button
+                  className="d-flex align-items-center"
+                  onClick={() => setShoweliminar(!showeliminar)}
+                >
+                  <span className="pe-1">Eliminar</span>
+                  <FiTrash></FiTrash>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="body-usuario pb-4">
-        <div className="zona_busqueda pt-4">
+        <div className="zona_busqueda pt-2">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-12">
-                <ul className="tipo-de-citas d-flex flex-nowrap overflow-auto justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-start ">
-                  <li className={` ${poppinsMenu.className}`}>
-                    <Link href={"crear"}>Crear Usuario</Link>
-                  </li>
-                  <li className={`activo ${poppinsMenu.className}`}>
-                    <Link href={"mantenimiento"}>
-                      Mantenimiento de usuarios
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-12 py-4 d-flex align-items-center inputBuscar">
+              <div className="col-12 pb-4 pt-0 d-flex align-items-center inputBuscar">
                 <input
                   type="text"
                   name=""
@@ -151,11 +139,30 @@ const Page = () => {
                   </button>
                 </div>
               </div>
-              <div className="col-12 d-flex align-items-center justify-content-between mb-3 btn_filtrar">
-                <div>120 Usuarios</div>
-                <div className="cursor-pointer" onClick={() => setShow(!show)}>
-                  <span className="me-2 ">Todos</span>
-                  {parse(icono_filtrar)}
+              <div className="col-12">
+                <ul className="tipo-de-citas d-flex flex-nowrap overflow-auto justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-start ">
+                  <li className="activo">
+                    <Link href={"#"}>Todos</Link>
+                  </li>
+                  <li className={``}>
+                    <Link href={"#"}>Cardiólogos</Link>
+                  </li>
+                  <li>
+                    <Link href={"crear"}>Pediátras</Link>
+                  </li>
+                  <li>
+                    <Link href={"crear"}>Oftalmología</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-12 pt-4 d-flex align-items-center justify-content-between mb-3 btn_filtrar">
+                <div>Total 82</div>
+                <div
+                  className="cursor-pointer txtGestionarHorarios"
+                  onClick={() => setShow(!show)}
+                >
+                  <img src="/img/calendar-2.png" alt="" />
+                  <span className="ms-2 ">Gestionar horarios</span>
                 </div>
               </div>
             </div>
@@ -268,145 +275,33 @@ const Page = () => {
         <div className="deco"></div>
       </div>
       <Modal
+        className="modalokRegistro"
         animation={false}
         backdrop={"static"}
-        show={show}
-        fullscreen={true}
+        show={showeliminar}
+        centered={true}
         onHide={() => setShow(false)}
       >
-        <Modal.Body>
+        <Modal.Body className="d-flex flex-column justify-content-center align-items-center">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-12 d-flex align-items-center justify-content-between modalHeader">
-                <div className="cursor-pointer" onClick={() => setShow(!show)}>
-                  <IoCloseOutline></IoCloseOutline>
+              <div className="col-12 ">
+                <img
+                  src={`/img/okeliminar.png`}
+                  className="mx-auto d-block mb-3 eliminar"
+                />
+                <div className="txtinfo txt-center mx-auto mb-3 eliminar">
+                  ¿Estás seguro de eliminar este usuario?
                 </div>
-                {/* la clase activo le dá el color verde*/}
-                <div className="txtLimpiar activo">Limpiar</div>
-              </div>
-              <div className="col-12 modalBody py-4">
-                <div className="row">
-                  <div className="container-fluid">
-                    <div className="row">
-                      <div className="col-12 mb-4">
-                        <span className="filtrarpor">Filtrar por:</span>
-                      </div>
-                      <div className="col-12 mb-4">
-                        <div className="boxFiltro">
-                          <span className="titulo">Fecha</span>
-                          <ul className="lista-filtro">
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Todos
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  checked={true}
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Paciente
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Doctor
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                A-Z
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Z-A
-                              </label>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="boxFiltro">
-                          <span className="titulo">Especialidad</span>
-                          <ul className="lista-filtro">
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Especialidad 1
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Especialidad 2
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom"></span>
-                                Oftalmología
-                              </label>
-                            </li>
-                            <li>
-                              <label className="chktipo2">
-                                <input
-                                  type="checkbox"
-                                  id="recordar-contrasena"
-                                />
-                                <span className="checkbox-custom disabled"></span>
-                                Especialidad 4
-                              </label>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="d-flex justify-content-between gap-3">
+                  <button
+                    className="no"
+                    onClick={() => setShoweliminar(!showeliminar)}
+                  >
+                    No
+                  </button>
+                  <button>Sí</button>
                 </div>
-              </div>
-              <div className="col-12 modalFooter">
-                <button
-                  disabled={false}
-                  className=" text-white fw-bold login rounded-5 border-0 d-block mx-auto"
-                >
-                  Aplicar
-                </button>
               </div>
             </div>
           </div>

@@ -610,3 +610,21 @@ background-color: #A5A5A5;
       width: 8px;
       height: 16px;
     }
+
+    .tituloElijeFecha span:first-child{
+      font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+color: #2D423C;
+margin-right: 8px;
+    }
+    .tituloElijeFecha span:last-child{
+      font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+color:#0BA177;
+    }

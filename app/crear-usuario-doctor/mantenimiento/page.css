@@ -2,6 +2,43 @@
 .app{
     min-height: 100vh;
 }
+.head-usuario-detalle{
+  background-color: white;
+}
+.head-usuario-detalle .regresar svg{
+    color:#5ABC91;
+    min-width: 20px;
+    height: 18px;
+}
+.head-usuario-detalle .detalleUsuario{
+    font-family: Rubik;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color:#5ABC91;
+}
+.head-usuario-detalle .eliminar button{
+    background: #F3933A;
+    border-radius: 21px;
+    border:none;
+    color:white;
+    height: 32px;
+    padding:0 15px;
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.head-usuario-detalle .eliminar svg{
+    color:white;
+    width: 16px;
+    height: 16px;
+}
 .head-usuario{
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -602,3 +639,70 @@ letter-spacing: 0.01em;
 text-align: left;
 color:#677285;  
 }
+.modalokRegistro img.ok{
+  max-width: 94.17px;
+  height: 83px;
+}
+ .modalokRegistro img.eliminar{
+  max-width: 102px;
+  height: 94px;
+}
+.modalokRegistro .modal-content{
+  border:none;
+  box-shadow: 0px 4px 4px 0px #00197040;
+
+ }
+ .modalokRegistro .modal-body{
+  min-height: 269px;
+ }
+  .modalokRegistro .txtinfo.ok{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#383636;
+max-width: 137px;
+width: 100%;
+  }
+   .modalokRegistro .txtinfo.eliminar{
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#383636;
+max-width: 185px;
+width: 100%;
+  }
+    .modalokRegistro button{
+        max-width: 217px;
+    height: 46px;
+    padding: 13px 10px 14px 10px;
+    border-radius: 30px;
+    background-color: #5ABC91;
+    border: none;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 100%;
+    }
+    .modalokRegistro button.no{
+background-color: #A5A5A5;
+    }
+    .txtGestionarHorarios span{
+      color:
+      #BAE54B !important;
+    }
+    .txtGestionarHorarios img{
+      position: relative;
+      top: -1px;
+    }
