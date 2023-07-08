@@ -47,8 +47,8 @@
     margin:auto;
 }
 .taskbar .botones .icono svg{
-    width:24px;
-    height: 24px;
+    width:21px;
+    height: 21px;
     /*color:var(--ico-taskbar)*/
 }
 .taskbar .botones a{

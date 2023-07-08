@@ -97,7 +97,7 @@ const Page = () => {
 
   return (
     <div className={`app`}>
-      <div className="head-usuario-detalle py-3">
+      <div className="head-usuario-detalle py-3 pb-4">
         <div className="container-fluid">
           <div className="row">
             <div className="col-12 d-flex align-items-center justify-content-between">
@@ -107,129 +107,30 @@ const Page = () => {
               >
                 <BsArrowLeft></BsArrowLeft>
               </div>
-              <div className="detalleUsuario flex-fill px-3">Doctores</div>
-              <div className="eliminar">
-                <button
-                  className="d-flex align-items-center"
-                  onClick={() => setShoweliminar(!showeliminar)}
-                >
-                  <span className="pe-1">Eliminar</span>
-                  <FiTrash></FiTrash>
-                </button>
-              </div>
+              <div className="detalleUsuario flex-fill px-3">Reportes</div>
             </div>
           </div>
         </div>
       </div>
       <div className="body-usuario pb-4">
-        <div className="zona_busqueda pt-2">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-12 pb-4 pt-0 d-flex align-items-center inputBuscar">
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  className="flex-fill"
-                  placeholder="Busca por nombre, apellido o perfil"
-                />
-                <div className="btn-buscar">
-                  <button>
-                    <FiSearch></FiSearch>
-                  </button>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 d-flex flex-column">
+              <div className="itemReporteCard d-flex align-items-center justify-space-between">
+                <div className="flex-fill">
+                  <span className="d-block">Generar Reporte</span>
+                </div>
+                <div>
+                  <img src="img/flecha-derecha.png" alt="" />
                 </div>
               </div>
-              <div className="col-12">
-                <ul className="tipo-de-citas d-flex flex-nowrap overflow-auto justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-start ">
-                  <li className="activo">
-                    <Link href={"#"}>Todos</Link>
-                  </li>
-                  <li className={``}>
-                    <Link href={"#"}>Cardiólogos</Link>
-                  </li>
-                  <li>
-                    <Link href={"crear"}>Pediátras</Link>
-                  </li>
-                  <li>
-                    <Link href={"crear"}>Oftalmología</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-12 pt-4 d-flex align-items-center justify-content-between mb-3 btn_filtrar">
-                <div>Total 82</div>
-                <div
-                  className="cursor-pointer txtGestionarHorarios"
-                  onClick={() => setShow(!show)}
-                >
-                  <img src="/img/calendar-2.png" alt="" />
-                  <span className="ms-2 ">Gestionar horarios</span>
+              <div className="itemReporteCard d-flex align-items-center justify-space-between">
+                <div className="flex-fill">
+                  <span className="d-block">Histórico de reportes</span>
+                  <span className="d-block mt-1"> 6 creados el último mes</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="zona-doctores">
-          <div className="porLetra d-flex align-items-center">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12">J</div>
-              </div>
-            </div>
-          </div>
-          <div className="porUsuario">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12">
-                  {Array.from(new Array(3)).map((k) => (
-                    <>
-                      <div
-                        className="tarjetaPaciente d-flex align-items-center"
-                        onClick={() => router.push("detalle")}
-                      >
-                        <img src={"/img/foto-usuario.png"} alt="" />
-                        <div className="flex-fill flex-column d-flex infoCard">
-                          <span className=" text-left">
-                            José Fabricio Retes Ruiz
-                          </span>
-                          <p className="mb-0 text-left paciente">Paciente</p>
-                        </div>
-                        <div>
-                          <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
-                        </div>
-                      </div>
-                    </>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="porLetra d-flex align-items-center">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12">J</div>
-              </div>
-            </div>
-          </div>
-          <div className="porUsuario">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12">
-                  {Array.from(new Array(3)).map((k) => (
-                    <>
-                      <div className="tarjetaPaciente d-flex align-items-center">
-                        <img src={"/img/foto-usuario.png"} alt="" />
-                        <div className="flex-fill flex-column d-flex infoCard">
-                          <span className=" text-left">
-                            José Fabricio Retes Ruiz
-                          </span>
-                          <p className="mb-0 text-left paciente">Paciente</p>
-                        </div>
-                        <div>
-                          <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
-                        </div>
-                      </div>
-                    </>
-                  ))}
+                <div>
+                  <img src="img/flecha-derecha.png" alt="" />
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-@import url('../../globals.css');
+@import url('../../../globals.css');
 .app{
     min-height: 100vh;
 }
@@ -131,12 +131,12 @@ text-align: left;
     margin:auto;
 }
 .taskbar .botones .icono svg{
-    width:24px;
-    height: 24px;
+    width:21px;
+    height: 21px;
     /*color:var(--ico-taskbar)*/
 }
 .taskbar .botones .icono2 svg{
-    width:38px;
+    width:31px;
     height: 24px;
     /*color:var(--ico-taskbar)*/
 }
@@ -579,4 +579,52 @@ width: 100%;
     }
     .modalokRegistro button.no{
 background-color: #A5A5A5;
+    }
+
+
+    .calendario button{
+      border:none;
+      border: 1px solid #BBE550;
+      box-shadow: 1px 6px 11px 0px #00000008;
+      background-color: 
+      #BBE550;
+      border-radius: 12px;
+      height: 60px;
+      border-bottom: 8px solid #a3d22a;
+    }
+
+    .calendario button .col1{
+
+    }
+
+    .calendario button .col2{
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 23px;
+      letter-spacing: 0em;
+      
+    }
+
+    .calendario button .col3 img{
+      width: 8px;
+      height: 16px;
+    }
+
+    .tituloElijeFecha span:first-child{
+      font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+color: #2D423C;
+margin-right: 8px;
+    }
+    .tituloElijeFecha span:last-child{
+      font-family: Roboto;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+color:#0BA177;
     }

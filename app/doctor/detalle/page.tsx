@@ -21,7 +21,6 @@ import Modal from "react-bootstrap/Modal";
 import { HiOutlineCalendarDays, HiOutlineClock } from "react-icons/hi2";
 import "react-calendar/dist/Calendar.css";
 import { RiPencilFill } from "react-icons/ri";
-import SeleccionarHorarioCard from "@/components/SeleccionarHorarioCard/SeleccionarHorarioCard";
 
 const svgUsuario = `<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.77138 8.1525C9.69102 8.145 9.59459 8.145 9.5062 8.1525C7.5937 8.0925 6.07495 6.63 6.07495 4.83C6.07495 2.9925 7.66602 1.5 9.64281 1.5C11.6116 1.5 13.2107 2.9925 13.2107 4.83C13.2026 6.63 11.6839 8.0925 9.77138 8.1525Z" stroke="#5ABC91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

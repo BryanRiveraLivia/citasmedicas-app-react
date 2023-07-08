@@ -3,7 +3,6 @@
     min-height: 100vh;
 }
 .head-usuario-detalle{
-  background-color: white;
 }
 .head-usuario-detalle .regresar svg{
     color:#5ABC91;
@@ -38,11 +37,6 @@ text-align: left;
     color:white;
     width: 16px;
     height: 16px;
-}
-.head-usuario{
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    background-color: var(--bg_verde2);
 }
 .body-usuario{
     padding-bottom: 112px !important;
@@ -121,7 +115,6 @@ text-align: left;
     position: relative;
     top: -39px;
     left: 10px;
-    transition: .3s;
 }
 .taskbar .icono-especial .icono:hover{
     box-shadow: none;
@@ -138,12 +131,12 @@ text-align: left;
     margin:auto;
 }
 .taskbar .botones .icono svg{
-    width:24px;
-    height: 24px;
+    width:21px;
+    height: 21px;
     /*color:var(--ico-taskbar)*/
 }
 .taskbar .botones .icono2 svg{
-    width:38px;
+    width:31px;
     height: 24px;
     /*color:var(--ico-taskbar)*/
 }
@@ -172,22 +165,6 @@ text-align: left;
 .taskbar .botones  .txtlabel{
     font-size:11px;
 }
-.btn_filtrar svg{
-    width: 18.75px;
-    height: 18.75px;
-}
-.btn_filtrar div:first-child{
-    font-family: Roboto;
-font-size: 14px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0em;
-color: #2D423CCC;
-}
-.btn_filtrar div:last-child span{
-   color: #42B784CC;
-
-}
 .tipo-de-citas{
     padding: 0;
     margin:0;
@@ -196,7 +173,7 @@ color: #2D423CCC;
 }
 .tipo-de-citas li{
     font-family: 'Poppins';
-   /* height: 45px;*/
+    /*height: 45px;*/
     cursor: pointer;
     border-radius: 30px;
     display: flex;
@@ -204,7 +181,7 @@ color: #2D423CCC;
     align-items: center;
     color:#8696BB;
     transition: .3s;
-   /* padding:20px;*/
+    /*padding:20px;*/
     font-weight: 500;
     white-space: nowrap;
     font-size: 12px;
@@ -218,7 +195,7 @@ color: #2D423CCC;
     color:var(--ico-taskbar-activo);
 }
 .tipo-de-citas li a{
-  text-decoration: none;
+    text-decoration: none;
     color: unset;
     height: 45px;
     padding: 15px;
@@ -355,6 +332,11 @@ text-align: center;
     align-items: center;
     margin-bottom: 10px;
   }
+  .radio-container.activo{
+    border: 1px solid 
+    #61CF9F;
+    color:#61CF9F;
+  }
   
   .radio-container input[type="radio"] {
     display: none;
@@ -470,176 +452,76 @@ text-align: left;
     border: 1px solid gray;
     padding: 10px;
   }
-  .inputBuscar input{
-    max-width: 99%;
-    height: 45px;
-    border-radius: 73px;
-    border: 1px solid #DFDFDF;
-    border-right: 0 !important;
-    padding:0 60px 0 15px;
-    color: var(--bg_gris2);
-    font-size: 14px;
-  }
-  .inputBuscar input:focus-visible{
-    outline: none;
-  }
-  .inputBuscar input::placeholder{
-    font-family: "Roboto";
-font-size: 14px;
-font-weight: 400 !important;
-line-height: 24px;
-letter-spacing: 0em;
-color:#C0C0C0;
-  }
-  .inputBuscar .btn-buscar{
-    position: absolute;
-    padding-right: 15px;
-    right: 0;
-  }
-  .inputBuscar button{
-    width: 46px;
-height: 45px;
-top: 65px;
-left: 306.75px;
-border-radius: 64px;
-background-color: #61CF9F;
-color:white;
-border:none;
-  }
-  .inputBuscar button svg{
-    width: 20px;
-    height: 20px;
-  }
-  .zona_busqueda{
+  .cardDetalleUsuario{
     background-color: white;
-  }
-  .zona-doctores .porLetra{
-    height: 28px;
-    background-color: #ECF7F2;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#42B784;
-  }
-  .zona-doctores .porUsuario{
-    padding:16px 6px;
-  }
-  .tarjetaPaciente{
-min-height: 81px;
-height: auto;
-border-radius: 15px;
-border: 1px;
-box-shadow: 1px 6px 11px 0px #00000008;
-border: 1px solid #C0C0C033;
-padding:15px 16px 15px 8px;
-gap:12px;
-margin-bottom: 12px;
-cursor: pointer;
-transition: .3s;
-  }
-  .tarjetaPaciente:hover{
-    box-shadow: none;
-  }
-  .tarjetaPaciente img{
-    width:44px ;
-    height: 44px;
-    border-radius: 100%;
-  }
-  .tarjetaPaciente svg{
-    min-width: 7px;
-    min-height: 15px;
-    color: #61CF9F;
-  }
-  .tarjetaPaciente .infoCard span{
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0em;
-    color:#2D423C;
-    /*-webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    white-space: normal;
-    overflow: hidden;*/
-  }
-  .tarjetaPaciente .infoCard p{
-    font-family: Roboto;
-font-size: 13px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0em;
-/*-webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    white-space: normal;
-    overflow: hidden;*/
-  }
-  .tarjetaPaciente .infoCard p.paciente{
+    box-shadow: 2px 12px 20px 0px #5A75A70A;
 
-    color:#89D727;
+    padding:20px 16px 20px 16px;
+    border-radius: 8px;
   }
-  .tarjetaPaciente .infoCard p.doctor{
-    color:#0EBE7F;
+  .cardDetalleUsuario .col1 img{
+    min-width: 48px;
+    height: 48px;
   }
-  .modalHeader svg{
-    width: 25px;
-    height: 25px;
-  }
-  .modalHeader .txtLimpiar{
+  .cardDetalleUsuario .col1 .infoNombre span:first-child{
     font-family: Roboto;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 23px;
-  letter-spacing: 0em;
-  text-align: left;
-color:#C4C4C4;
-  }
-  .modalHeader .txtLimpiar.activo{
-    color:#BBE550;
-  }
-
-  .modalBody .filtrarpor{
-font-family: Roboto;
-font-size: 18px;
-font-weight: 400;
-line-height: 23px;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
 letter-spacing: 0em;
 text-align: left;
-color:#5ABC91;
+color:#2D423C;
   }
-
-  .modalBody .boxFiltro .titulo{
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#2D423C;
-    display: block;
-    margin-bottom: 15px;
-  }
-
-  .modalBody .boxFiltro ul.lista-filtro{
-    padding:0;
-    margin:0;
-    list-style: none;
-  }
-
-  .modalBody .boxFiltro ul.lista-filtro li{
-font-family: Roboto;
-font-size: 18px;
+  .cardDetalleUsuario .col1 .infoNombre span:last-child{
+    font-family: Poppins;
+font-size: 14px;
 font-weight: 400;
 line-height: 21px;
-letter-spacing: 0.01em;
+letter-spacing: 0em;
 text-align: left;
-color:#677285;  
-}
-.modalokRegistro img.ok{
+
+color:#8696BB;
+  }
+  .cardDetalleUsuario > div {
+    gap:12px;
+  }
+  .cardDetalleUsuario hr{
+    border-top: 1px solid #F5F5F5;
+    opacity:9;
+  }
+  .cardDetalleUsuario .col2 > div:first-child{
+    color: #8696BB;
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+  }
+  .cardDetalleUsuario .col2 > div:first-child svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+  .cardDetalleUsuario .col2 > div:last-child{
+    color: #8696BB;
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+
+  }
+  .cardDetalleUsuario .col2 > div:last-child svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+  .modalokRegistro img.ok{
   max-width: 94.17px;
   height: 83px;
 }
@@ -697,12 +579,4 @@ width: 100%;
     }
     .modalokRegistro button.no{
 background-color: #A5A5A5;
-    }
-    .txtGestionarHorarios span{
-      color:
-      #BAE54B !important;
-    }
-    .txtGestionarHorarios img{
-      position: relative;
-      top: -1px;
     }
