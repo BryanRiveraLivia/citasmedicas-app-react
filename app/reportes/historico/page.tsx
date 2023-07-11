@@ -97,46 +97,65 @@ const Page = () => {
 
   return (
     <div className={`app`}>
-      <div className="head-usuario-detalle py-3 pb-4">
+      <div className="head-usuario-detalle py-3">
         <div className="container-fluid">
           <div className="row">
             <div className="col-12 d-flex align-items-center justify-content-between">
               <div
                 className="regresar cursor-pointer"
-                onClick={() => router.push("mantenimiento")}
+                onClick={() => router.push("/reportes")}
               >
                 <BsArrowLeft></BsArrowLeft>
               </div>
-              <div className="detalleUsuario flex-fill px-3">Reportes</div>
+              <div className="detalleUsuario flex-fill px-3">
+                Histórico de reporte
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="body-usuario pb-4">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12 d-flex flex-column">
-              <div
-                className="itemReporteCard d-flex align-items-center justify-space-between"
-                onClick={() => router.push("/reportes/generar")}
-              >
-                <div className="flex-fill">
-                  <span className="d-block">Generar Reporte</span>
-                </div>
-                <div>
-                  <img src="img/flecha-derecha.png" alt="" />
-                </div>
+        <div className="zona_busqueda pt-2">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12 pt-0 d-flex align-items-center justify-content-between mb-3 btn_filtrar">
+                <div className="txtSeleccionaPaciente"></div>
+                <div className="txtTotal">Total 2</div>
               </div>
-              <div
-                className="itemReporteCard d-flex align-items-center justify-space-between"
-                onClick={() => router.push("/reportes/historico")}
-              >
-                <div className="flex-fill">
-                  <span className="d-block">Histórico de reportes</span>
-                  <span className="d-block mt-1"> 6 creados el último mes</span>
-                </div>
-                <div>
-                  <img src="img/flecha-derecha.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="zona-doctores">
+          <div className="porLetra d-flex align-items-center">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12 px-3">12 de Octubre del 2022</div>
+              </div>
+            </div>
+          </div>
+          <div className="porUsuario">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  {Array.from(new Array(12)).map((k) => (
+                    <>
+                      <div
+                        className="tarjetaPaciente d-flex align-items-center"
+                        onClick={() => router.push("detalle")}
+                      >
+                        <img src={"/img/foto-usuario.png"} alt="" />
+                        <div className="flex-fill flex-column d-flex infoCard">
+                          <span className=" text-left">
+                            José Fabricio Retes Ruiz
+                          </span>
+                          <p className="mb-0 text-left paciente">51 años</p>
+                        </div>
+                        <div>
+                          <img src="/img/ico_reporte.png" alt="" />
+                        </div>
+                      </div>
+                    </>
+                  ))}
                 </div>
               </div>
             </div>

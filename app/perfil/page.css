@@ -2,59 +2,6 @@
 .app{
     min-height: 100vh;
 }
-.eliminarItem{
-  width: 40px;
-height: 32px;
-padding: 0px 12px 0px 12px;
-border-radius: 21px;
-background-color: #F3933A;
-border:none;
-color:white;
-}
-.eliminarItem svg{
-  color:white !important;
-  width: 16px;
-  height: 16px;
-}
-.eliminarItem:disabled{
-  opacity: .5;
-}
-.head-usuario-detalle{
-}
-.head-usuario-detalle .regresar svg{
-    color:#5ABC91;
-    min-width: 20px;
-    height: 18px;
-}
-.head-usuario-detalle .detalleUsuario{
-    font-family: Rubik;
-font-size: 18px;
-font-weight: 500;
-line-height: 24px;
-letter-spacing: 0em;
-text-align: left;
-color:#5ABC91;
-}
-.head-usuario-detalle .eliminar button{
-    background: #F3933A;
-    border-radius: 21px;
-    border:none;
-    color:white;
-    height: 32px;
-    padding:0 15px;
-    font-family: Roboto;
-font-size: 14px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0em;
-text-align: left;
-
-}
-.head-usuario-detalle .eliminar svg{
-    color:white;
-    width: 16px;
-    height: 16px;
-}
 .head-usuario{
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -655,123 +602,178 @@ letter-spacing: 0.01em;
 text-align: left;
 color:#677285;  
 }
-.modalokRegistro img.ok{
-  max-width: 94.17px;
-  height: 83px;
+
+
+.especialidades{
+  margin:0;
+  padding:0;
+  list-style: none;
 }
- .modalokRegistro img.eliminar{
-  max-width: 102px;
-  height: 94px;
+.especialidades li{
+margin-bottom: 15px;
 }
-.modalokRegistro .modal-content{
-  border:none;
-  box-shadow: 0px 4px 4px 0px #00197040;
-
- }
- .modalokRegistro .modal-body{
-  min-height: 269px;
- }
-  .modalokRegistro .txtinfo.ok{
-    font-family: Roboto;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-letter-spacing: 0em;
-text-align: center;
-color:#383636;
-max-width: 137px;
-width: 100%;
-  }
-   .modalokRegistro .txtinfo.eliminar{
-    font-family: Roboto;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-letter-spacing: 0em;
-text-align: center;
-color:#383636;
-max-width: 185px;
-width: 100%;
-  }
-    .modalokRegistro button{
-        max-width: 217px;
-    height: 46px;
-    padding: 13px 10px 14px 10px;
-    border-radius: 30px;
-    background-color: #5ABC91;
-    border: none;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: white;
-    display: block;
-    margin: auto;
-    width: 100%;
-    }
-    .modalokRegistro button.no{
-background-color: #A5A5A5;
-    }
-    .txtGestionarHorarios span{
-      color:
-      #BAE54B !important;
-    }
-    .txtGestionarHorarios img{
-      position: relative;
-      top: -1px;
-    }
-    .btnEliminarZona button{
-      min-width: 165px;
-      height: 45px;
-      background-color: #F3933A;
-      color:white;
-      border:none;
-      border-radius: 21px;
-      font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-
-    }
-
-    .btnEliminarZona button:disabled{
-      opacity: .5;
-    }
-    .itemReporteCard{
-      border: 1px solid #C0C0C033;
-      box-shadow: 1px 6px 11px 0px #00000008;
-      height: 81px;
-      border-radius: 15px;
-      padding:0 21px;
-      margin-bottom: 16px;
-      transition: .3s;
-      cursor: pointer;
-    }
-    .itemReporteCard:hover{
-      box-shadow: none;
-    }
-    .itemReporteCard img{
-      width:9px;
-      height: 15px;
-    }
-    .itemReporteCard span:first-child{
-      font-family: Roboto;
-font-size: 17px;
+.txtActuales{
+  font-family: Rubik;
+font-size: 18px;
 font-weight: 500;
-line-height: 20px;
+line-height: 24px;
 letter-spacing: 0em;
 text-align: left;
 
-    }
-    .itemReporteCard span:last-child{
-      font-family: Roboto;
+}
+.txtTotal{
+  font-family: Roboto;
 font-size: 14px;
-font-weight: 300;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+opacity: .8;
+}
+button.anadirNueva{
+  border: 1px solid #0EBE7F;
+  color:#0EBE7F;
+  min-width: 131px;
+  height: 40px;
+  background-color: white;
+  border-radius: 8px;
+  font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+.head-usuario-detalle{
+}
+.head-usuario-detalle .regresar svg{
+    color:#5ABC91;
+    min-width: 20px;
+    height: 18px;
+}
+.head-usuario-detalle .detalleUsuario{
+    font-family: Rubik;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color:#5ABC91;
+}
+.head-usuario-detalle .eliminar button{
+    background: #F3933A;
+    border-radius: 21px;
+    border:none;
+    color:white;
+    height: 32px;
+    padding:0 15px;
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
 line-height: 16px;
 letter-spacing: 0em;
 text-align: left;
 
-    }
+}
+.head-usuario-detalle .eliminar svg{
+    color:white;
+    width: 16px;
+    height: 16px;
+}
+.inputAnadirNuevo{
+  background: #607D8B33;
+  border: 1px solid #607D8B33;
+  box-shadow: 0px 0px 1px 0px #0000001A;
+  min-width: 286px;
+  border-radius: 28px;
+  background-color: white;
+  padding:0 15px;
+  height: 46px;
+  color: #607D8B;
+
+}
+.inputAnadirNuevo::placeholder{
+  font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #607D8B80;
+
+}
+.inputAnadirNuevo:focus-visible{
+  outline: none;
+  box-shadow: none;
+}
+.btnGuardarEspecialidad{
+  min-width: 96px;
+  border-radius: 8px;
+  height: 40px;
+  background-color: #0ebe7f;
+border: 1px solid #0EBE7F;
+font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+color:white;
+}
+.btnGuardarEspecialidad:disabled{
+
+  background:#85ddbd;
+}
+.ocultachks .checkbox-custom{
+  display: none;
+}
+.ocultachks label{
+  padding-left: 0;
+}
+.txtEliminarEspecialidad{
+  font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #FE9B27CC;
+opacity: .8;
+
+}
+.menuPerfil{
+  position: absolute;
+  background: white;
+  right: 30px;
+  margin-top: 5px;
+  min-width: 186px;
+  box-shadow: 2px 12px 20px 0px #5A75A70A;
+
+box-shadow: 0px 4px 4px 0px #00000040;
+min-height: 164px;
+border-radius: 12px;
+padding:20px;
+z-index: 9;
+}
+.menuPerfil ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+.menuPerfil ul li a{
+  display: block;
+  color: #2D423CCC;
+  text-decoration: none;
+  font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+padding:10px 0px;
+
+}
+.txttituloDoctor{
+  color: #0EBE7F;
+}

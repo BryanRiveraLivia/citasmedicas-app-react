@@ -1,4 +1,4 @@
-@import url('../globals.css');
+@import url('../../globals.css');
 .app{
     min-height: 100vh;
 }
@@ -765,13 +765,109 @@ line-height: 20px;
 letter-spacing: 0em;
 text-align: left;
 
+
     }
     .itemReporteCard span:last-child{
       font-family: Roboto;
-font-size: 14px;
-font-weight: 300;
-line-height: 16px;
+font-size: 17px;
+font-weight: 500;
+line-height: 20px;
 letter-spacing: 0em;
 text-align: left;
 
+
+    }
+    .imgPerfil{
+      width: 68px;
+      height: 68px;
+      background-color: #F6F6F6;
+      border-radius: 100%;
+    }
+    .txtHola{
+      font-family: Roboto;
+font-size: 20px;
+font-weight: 300;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+
+    }
+    .txtNombrePerfil{
+font-family: Roboto;
+font-size: 18px;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+
+    }
+    .btnGestionaPerfil{
+      background-color: #bbe550;
+      box-shadow: 1px 6px 11px 0px #00000008;
+      width:100%;
+      min-height: 68px;
+      border-radius: 12px;
+      text-decoration: none;
+      border-bottom: 8px solid #a5d62b;
+      transition: .3s;
+    }
+
+    .btnGestionaPerfil:active{
+      
+      border-bottom: 8px solid #bbe550;
+    }
+    .btnGestionaPerfil .txtBtngestiona span:first-child{
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      
+      color:white;
+    }
+    .btnGestionaPerfil .txtBtngestiona span:last-child{
+      font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color:white;
+
+    }
+    .btnGestionaPerfil img.icoGestionaBtn{
+      width: 28px;
+      height: 31px;
+    }
+    .btnAdmistrativos{
+      border: 1px solid #C0C0C033;
+      box-shadow: 1px 6px 11px 0px #00000008;
+      border: 1px solid #C0C0C033;
+      min-width: 98px;
+border-radius: 15px;
+padding:15px;
+text-decoration: none;
+    }
+    .btnAdmistrativos .ico{
+      margin-bottom: 5px;
+    }
+    .btnAdmistrativos .txtbtn{
+      font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+color: #2D423C;
+
+    }
+    .tituloPerfilesZonas{
+      font-family: Roboto;
+font-size: 20px;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+color:#2D423C;
     }

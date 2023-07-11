@@ -1,4 +1,4 @@
-@import url('../globals.css');
+@import url('../../globals.css');
 .app{
     min-height: 100vh;
 }
@@ -20,6 +20,7 @@ color:white;
   opacity: .5;
 }
 .head-usuario-detalle{
+  background-color: white;
 }
 .head-usuario-detalle .regresar svg{
     color:#5ABC91;
@@ -192,18 +193,7 @@ text-align: left;
     width: 18.75px;
     height: 18.75px;
 }
-.btn_filtrar div:first-child{
-    font-family: Roboto;
-font-size: 14px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0em;
-color: #2D423CCC;
-}
-.btn_filtrar div:last-child span{
-   color: #42B784CC;
 
-}
 .tipo-de-citas{
     padding: 0;
     margin:0;
@@ -560,9 +550,8 @@ transition: .3s;
     box-shadow: none;
   }
   .tarjetaPaciente img{
-    width:44px ;
-    height: 44px;
-    border-radius: 100%;
+    width: 22px;
+    height: 24px;
   }
   .tarjetaPaciente svg{
     min-width: 7px;
@@ -740,38 +729,22 @@ background-color: #A5A5A5;
     .btnEliminarZona button:disabled{
       opacity: .5;
     }
-    .itemReporteCard{
-      border: 1px solid #C0C0C033;
-      box-shadow: 1px 6px 11px 0px #00000008;
-      height: 81px;
-      border-radius: 15px;
-      padding:0 21px;
-      margin-bottom: 16px;
-      transition: .3s;
-      cursor: pointer;
-    }
-    .itemReporteCard:hover{
-      box-shadow: none;
-    }
-    .itemReporteCard img{
-      width:9px;
-      height: 15px;
-    }
-    .itemReporteCard span:first-child{
+
+    .txtSeleccionaPaciente{
       font-family: Roboto;
-font-size: 17px;
-font-weight: 500;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
 
     }
-    .itemReporteCard span:last-child{
+    .txtTotal{
       font-family: Roboto;
-font-size: 14px;
-font-weight: 300;
-line-height: 16px;
-letter-spacing: 0em;
-text-align: left;
-
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      
     }

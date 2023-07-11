@@ -74,6 +74,18 @@
   .form-box .input-grupo input.icon{
     padding: 13.5px 52px 13.5px 15px !important;
   }
+  .form-box .input-grupo span.Modificar{
+    position: absolute;
+    right: 0;
+    margin-top: 14px;
+    margin-right: 36px;
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+color:#61CF9F;
+  }
   .form-box label{
     font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -138,6 +150,9 @@ text-align: left;
     width: 26px;
     height: 26px;
     color:var(--bg_gris2);
+  }
+  .form-box.modificar input{
+    padding-right: 102px;
   }
   button.login{
     width: 100%;

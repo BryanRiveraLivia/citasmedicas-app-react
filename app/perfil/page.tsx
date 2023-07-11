@@ -93,50 +93,166 @@ const Page = () => {
   const [value, setValue] = useState<any>("");
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
-  const [showeliminar, setShoweliminar] = useState<boolean>(false);
+  const [showEspecialidad, setShowEspecialidad] = useState(false);
+  const [anadirNueva, setAnadirNueva] = useState(false);
+  const [txtAnadirNueva, setTxtAnadirNueva] = useState<string>("");
+  const [eliminarEspecialidad, setEliminarEspecialidad] =
+    useState<boolean>(false);
+  const [aperturaMenuPerfil, setAperturaMenuPerfil] = useState<boolean>(false);
 
   return (
     <div className={`app`}>
-      <div className="head-usuario-detalle py-3 pb-4">
+      <div className="head-usuario p-3">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 d-flex align-items-center justify-content-between">
-              <div
-                className="regresar cursor-pointer"
-                onClick={() => router.push("mantenimiento")}
-              >
-                <BsArrowLeft></BsArrowLeft>
+            <div className="col-12 d-flex align-items-center">
+              <div>
+                <img src={`/img/img-perfil.png`} alt="" />
               </div>
-              <div className="detalleUsuario flex-fill px-3">Reportes</div>
+              <div className="flex-fill px-2">
+                <span className="info-nombre  text-white fw-bold">
+                  Hola Juan Gutierrez,
+                </span>
+                <span className="info-bienvenido d-block text-white">
+                  Bienvenido a <p className="d-inline">Financoop</p>
+                </span>
+              </div>
+              <div>
+                <BiDotsVerticalRounded
+                  className="text-white cursor-pointer"
+                  style={{ fontSize: "25px" }}
+                  onClick={(e) => [
+                    setAperturaMenuPerfil(!aperturaMenuPerfil),
+                    e.stopPropagation(),
+                  ]}
+                ></BiDotsVerticalRounded>
+                {aperturaMenuPerfil && (
+                  <div className="menuPerfil d-flex align-items-center align-content-stretch flex-wrap">
+                    <ul>
+                      <li>
+                        <Link href={"/"}>Perfil</Link>
+                      </li>
+                      <li>
+                        <Link href={"/"}>Tipo de Notificaciones</Link>
+                      </li>
+                      <li>
+                        <Link href={"/"}>Canales de Ayuda</Link>
+                      </li>
+                      <li>
+                        <Link href={"/"}>Cerrar Sesión</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="body-usuario pb-4">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12 d-flex flex-column">
-              <div
-                className="itemReporteCard d-flex align-items-center justify-space-between"
-                onClick={() => router.push("/reportes/generar")}
-              >
-                <div className="flex-fill">
-                  <span className="d-block">Generar Reporte</span>
-                </div>
-                <div>
-                  <img src="img/flecha-derecha.png" alt="" />
+        <div className="zona_busqueda pt-4">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <ul className="tipo-de-citas d-flex flex-nowrap overflow-auto justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-start ">
+                  <li className={` ${poppinsMenu.className}`}>
+                    <Link href={"crear"}>Crear Usuario</Link>
+                  </li>
+                  <li className={`activo ${poppinsMenu.className}`}>
+                    <Link href={"mantenimiento"}>
+                      Mantenimiento de usuarios
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-12 py-4 d-flex align-items-center inputBuscar">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="flex-fill"
+                  placeholder="Busca por nombre, apellido o perfil"
+                />
+                <div className="btn-buscar">
+                  <button>
+                    <FiSearch></FiSearch>
+                  </button>
                 </div>
               </div>
-              <div
-                className="itemReporteCard d-flex align-items-center justify-space-between"
-                onClick={() => router.push("/reportes/historico")}
-              >
-                <div className="flex-fill">
-                  <span className="d-block">Histórico de reportes</span>
-                  <span className="d-block mt-1"> 6 creados el último mes</span>
+              <div className="col-12 d-flex align-items-center justify-content-between mb-3 btn_filtrar">
+                <div>120 Usuarios</div>
+                <div className="cursor-pointer" onClick={() => setShow(!show)}>
+                  <span className="me-2 ">Todos</span>
+                  {parse(icono_filtrar)}
                 </div>
-                <div>
-                  <img src="img/flecha-derecha.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="zona-doctores">
+          <div className="porLetra d-flex align-items-center">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">J</div>
+              </div>
+            </div>
+          </div>
+          <div className="porUsuario">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  {Array.from(new Array(3)).map((k) => (
+                    <>
+                      <div
+                        className="tarjetaPaciente d-flex align-items-center"
+                        onClick={() => router.push("detalle")}
+                      >
+                        <img src={"/img/foto-usuario.png"} alt="" />
+                        <div className="flex-fill flex-column d-flex infoCard">
+                          <span className=" text-left">
+                            José Fabricio Retes Ruiz
+                          </span>
+                          <p className="mb-0 text-left paciente">Paciente</p>
+                        </div>
+                        <div>
+                          <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
+                        </div>
+                      </div>
+                    </>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="porLetra d-flex align-items-center">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">J</div>
+              </div>
+            </div>
+          </div>
+          <div className="porUsuario">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  {Array.from(new Array(3)).map((k) => (
+                    <>
+                      <div className="tarjetaPaciente d-flex align-items-center">
+                        <img src={"/img/foto-usuario.png"} alt="" />
+                        <div className="flex-fill flex-column d-flex infoCard">
+                          <span className=" text-left">
+                            José Fabricio Retes Ruiz
+                          </span>
+                          <p className="mb-0 text-left txttituloDoctor">
+                            Doctor - Oftalmólogo
+                          </p>
+                        </div>
+                        <div>
+                          <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
+                        </div>
+                      </div>
+                    </>
+                  ))}
                 </div>
               </div>
             </div>
@@ -167,7 +283,10 @@ const Page = () => {
                   <div className="icono icono2">{parse(snack_pacientes)}</div>
                   <div className="txtlabel">Pacientes</div>
                 </Link>
-                <Link href="#">
+                <Link
+                  href="#"
+                  onClick={() => setShowEspecialidad(!showEspecialidad)}
+                >
                   <div className="icono icono1">
                     {parse(snack_especialidad)}
                   </div>
@@ -182,33 +301,274 @@ const Page = () => {
         <div className="deco"></div>
       </div>
       <Modal
-        className="modalokRegistro"
         animation={false}
         backdrop={"static"}
-        show={showeliminar}
-        centered={true}
+        show={show}
+        fullscreen={true}
         onHide={() => setShow(false)}
       >
-        <Modal.Body className="d-flex flex-column justify-content-center align-items-center">
+        <Modal.Body>
           <div className="container-fluid">
             <div className="row">
-              <div className="col-12 ">
-                <img
-                  src={`/img/okeliminar.png`}
-                  className="mx-auto d-block mb-3 eliminar"
-                />
-                <div className="txtinfo txt-center mx-auto mb-3 eliminar">
-                  ¿Estás seguro de eliminar este usuario?
+              <div className="col-12 d-flex align-items-center justify-content-between modalHeader">
+                <div className="cursor-pointer" onClick={() => setShow(!show)}>
+                  <IoCloseOutline></IoCloseOutline>
                 </div>
-                <div className="d-flex justify-content-between gap-3">
-                  <button
-                    className="no"
-                    onClick={() => setShoweliminar(!showeliminar)}
+                {/* la clase activo le dá el color verde*/}
+                <div className="txtLimpiar activo">Limpiar</div>
+              </div>
+              <div className="col-12 modalBody py-4">
+                <div className="row">
+                  <div className="container-fluid">
+                    <div className="row">
+                      <div className="col-12 mb-4">
+                        <span className="filtrarpor">Filtrar por:</span>
+                      </div>
+                      <div className="col-12 mb-4">
+                        <div className="boxFiltro">
+                          <span className="titulo">Fecha</span>
+                          <ul className="lista-filtro">
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Todos
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  checked={true}
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Paciente
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Doctor
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                A-Z
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Z-A
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="boxFiltro">
+                          <span className="titulo">Especialidad</span>
+                          <ul className="lista-filtro">
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Especialidad 1
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Especialidad 2
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom"></span>
+                                Oftalmología
+                              </label>
+                            </li>
+                            <li>
+                              <label className="chktipo2">
+                                <input
+                                  type="checkbox"
+                                  id="recordar-contrasena"
+                                />
+                                <span className="checkbox-custom disabled"></span>
+                                Especialidad 4
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 modalFooter">
+                <button
+                  disabled={false}
+                  className=" text-white fw-bold login rounded-5 border-0 d-block mx-auto"
+                >
+                  Aplicar
+                </button>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+      <Modal
+        animation={false}
+        backdrop={"static"}
+        id="modalEspecialidad"
+        show={showEspecialidad}
+        fullscreen={true}
+        onHide={() => setShow(false)}
+      >
+        <Modal.Body>
+          <div className="head-usuario-detalle">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12 d-flex align-items-center justify-content-between">
+                  <div
+                    className="regresar cursor-pointer"
+                    onClick={() => setShowEspecialidad(!showEspecialidad)}
                   >
-                    No
-                  </button>
-                  <button>Sí</button>
+                    <BsArrowLeft></BsArrowLeft>
+                  </div>
+                  <div className="detalleUsuario flex-fill px-3">
+                    Especialidades
+                  </div>
+                  <div className="eliminar">
+                    <button
+                      className="d-flex align-items-center"
+                      onClick={() =>
+                        setEliminarEspecialidad(!eliminarEspecialidad)
+                      }
+                    >
+                      <span className="pe-1">Eliminar</span>
+                      <FiTrash></FiTrash>
+                    </button>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="modalBody">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12 d-flex align-items-center justify-content-between py-4">
+                  <div className="txtActuales">Actuales</div>
+                  <div className="txtTotal">Total 4</div>
+                </div>
+                <div className="col-12">
+                  <div className="boxFiltro">
+                    <ul
+                      className={`lista-filtro ${
+                        eliminarEspecialidad ? null : "ocultachks"
+                      }`}
+                    >
+                      <li>
+                        <label className="chktipo2">
+                          <input type="checkbox" id="recordar-contrasena" />
+                          <span className="checkbox-custom"></span>
+                          Especialidad 1
+                        </label>
+                      </li>
+                      <li>
+                        <label className="chktipo2">
+                          <input type="checkbox" id="recordar-contrasena" />
+                          <span className="checkbox-custom"></span>
+                          Especialidad 2
+                        </label>
+                      </li>
+                      <li>
+                        <label className="chktipo2">
+                          <input type="checkbox" id="recordar-contrasena" />
+                          <span className="checkbox-custom"></span>
+                          Oftalmología
+                        </label>
+                      </li>
+                      <li>
+                        <label className="chktipo2">
+                          <input type="checkbox" id="recordar-contrasena" />
+                          <span className="checkbox-custom "></span>
+                          Especialidad 4
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {eliminarEspecialidad ? (
+                  <>
+                    <div className="col-12 mt-3">
+                      <span className="txtEliminarEspecialidad">
+                        Eliminar {1} especialidad
+                      </span>
+                    </div>
+                    <div className="col-12 ">
+                      <button
+                        className="btnGuardarEspecialidad mt-4"
+                        disabled={!txtAnadirNueva ? true : false}
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+                  </>
+                ) : !anadirNueva ? (
+                  <div className="col-12 mt-3">
+                    <button
+                      className="anadirNueva"
+                      onClick={() => setAnadirNueva(!anadirNueva)}
+                    >
+                      AÑADIR NUEVA
+                    </button>
+                  </div>
+                ) : (
+                  <div className="col-12 mt-3">
+                    <input
+                      type="text"
+                      placeholder="Escribir especialidad"
+                      className="inputAnadirNuevo"
+                      onChange={(e) => setTxtAnadirNueva(e.target.value)}
+                    />
+                    <br></br>
+                    <button
+                      className="btnGuardarEspecialidad mt-4"
+                      disabled={!txtAnadirNueva ? true : false}
+                    >
+                      GUARDAR
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
